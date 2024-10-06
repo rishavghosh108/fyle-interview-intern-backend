@@ -5,7 +5,7 @@
 ### 1. Clone the repository into your local machine using:
 
 ```
-git clone https://github.com/rishavghosh147/fyle-interview-intern-backend.git
+git clone https://github.com/rishavghosh108/fyle-interview-intern-backend.git
 ```
    
 ### 2. For running the application on your local machine, please ensure that you have docker installed.
@@ -22,7 +22,7 @@ docker-compose up
 ### 1. Clone the repository into your local machine using:
 
 ```
-git clone https://github.com/rishavghosh147/fyle-interview-intern-backend.git
+git clone https://github.com/rishavghosh108/fyle-interview-intern-backend.git
 ```
 
 ### 2. Install all requirements(run it into Fyle-backend-assignment folder):
