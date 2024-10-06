@@ -99,3 +99,45 @@ def test_grade_assignment_draft_assignment(client, h_teacher_1):
     data = response.json
 
     assert data['error'] == 'FyleError'
+
+def test_grade_assignment(client, h_teacher_1):
+    response = client.post(
+        '/teacher/assignments/grade',
+        json={
+            'id': 1,
+            'grade': "B"
+        },
+        headers=h_teacher_1
+    )
+
+    assert response.status_code == 200
+
+    assert response.json['data']['state'] == "GRADED"
+    assert response.json['data']['grade'] == "B"
+
+def test_regrade_assignment(client, h_teacher_1):
+    response = client.post(
+        '/teacher/assignments/grade',
+        json={
+            'id': 1,
+            'grade': "D"
+        },
+        headers=h_teacher_1
+    )
+
+    assert response.status_code == 200
+
+    assert response.json['data']['state'] == "GRADED"
+    assert response.json['data']['grade'] == "D"
+
+def test_empty_grade_assignment(client, h_teacher_1):
+    response = client.post(
+        '/teacher/assignments/grade',
+        headers=h_teacher_1
+        , json={
+            "id": 3,
+            "grade": None
+        }
+    )
+
+    assert response.status_code == 400
